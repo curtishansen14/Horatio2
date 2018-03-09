@@ -55,6 +55,20 @@ namespace Horatio_2._0.Controllers
             return RedirectToAction("Index");
         }
 
-      
+        public async Task<ActionResult>Edit(string id)
+        {
+            var role = await RoleManager.FindByIdAsync(id);
+            return View(new RoleViewModel(role));
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> Edit(RoleViewModel model)
+        {
+            var role = new ApplicationRole() { Id = model.Id, Name = model.Name };
+            await RoleManager.UpdateAsync(role);
+            return RedirectToAction("Index");
+        }
+
+
     }
 }
