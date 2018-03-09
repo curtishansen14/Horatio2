@@ -178,6 +178,10 @@
     <Compile Include="Migrations\201803091640241_hello roles.Designer.cs">
       <DependentUpon>201803091640241_hello roles.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803091723002_hello role bar.cs" />
+    <Compile Include="Migrations\201803091723002_hello role bar.Designer.cs">
+      <DependentUpon>201803091723002_hello role bar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -241,10 +245,14 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Role\Edit.cshtml" />
+    <Content Include="Views\Role\Index.cshtml" />
+    <Content Include="Views\Role\Create.cshtml" />
+    <Content Include="Views\Role\Details.cshtml" />
+    <Content Include="Views\Role\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Role\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -257,6 +265,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201803091640241_hello roles.resx">
       <DependentUpon>201803091640241_hello roles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803091723002_hello role bar.resx">
+      <DependentUpon>201803091723002_hello role bar.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

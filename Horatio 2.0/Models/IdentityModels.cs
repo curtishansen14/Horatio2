@@ -35,5 +35,7 @@ namespace Horatio_2._0.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<Horatio_2._0.Models.RoleViewModel> RoleViewModels { get; set; }
     }
 }
