@@ -15,8 +15,12 @@ namespace Horatio_2._0.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Labors
-        public ActionResult Index()
+        public ActionResult Index(int? id)
         {
+            if(id != null)
+            {
+                return View(db.Labors.Include(x => x.Quest).Include(y => y.QuestID == id).ToList());
+            }
             var labors = db.Labors.Include(l => l.Quest);
             return View(labors.ToList());
         }
@@ -37,7 +41,7 @@ namespace Horatio_2._0.Controllers
         }
 
         // GET: Labors/Create
-        public ActionResult Create()
+        public ActionResult Create(int? id)
         {
             ViewBag.QuestID = new SelectList(db.Quests, "QuestID", "Title");
             return View();
@@ -48,13 +52,17 @@ namespace Horatio_2._0.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "LaborID,QuestID,Title,Description,Location")] Labor labor)
+        public ActionResult Create([Bind(Include = "LaborID,QuestID,Title,Description,Location")] Labor labor, int? id)
         {
             if (ModelState.IsValid)
             {
+                labor.QuestID = (int)id;
                 db.Labors.Add(labor);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+
+                TempData["Message"] = "Labor Added";
+
+                return RedirectToAction("Create", "Labors", new { id = labor.QuestID });
             }
 
             ViewBag.QuestID = new SelectList(db.Quests, "QuestID", "Title", labor.QuestID);
