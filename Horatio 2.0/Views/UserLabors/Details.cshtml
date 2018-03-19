@@ -1,0 +1,66 @@
+﻿@model Horatio_2._0.Models.UserLabor
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>UserLabor</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.AspNetUser.Email)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.AspNetUser.Email)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Labor.Title)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Labor.Title)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.UserQuest.Id)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.UserQuest.Id)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Target)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Target)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.isComplete)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.isComplete)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.UserLaborID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

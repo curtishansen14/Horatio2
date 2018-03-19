@@ -169,8 +169,13 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LaborsController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\QuestsController.cs" />
     <Compile Include="Controllers\RoleController.cs" />
+    <Compile Include="Controllers\TopicsController.cs" />
+    <Compile Include="Controllers\UserLaborsController.cs" />
+    <Compile Include="Controllers\UserQuestsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -275,6 +280,31 @@
     <Content Include="Views\Role\Create.cshtml" />
     <Content Include="Views\Role\Details.cshtml" />
     <Content Include="Views\Role\Delete.cshtml" />
+    <Content Include="Views\Topics\Create.cshtml" />
+    <Content Include="Views\Topics\Delete.cshtml" />
+    <Content Include="Views\Topics\Details.cshtml" />
+    <Content Include="Views\Topics\Edit.cshtml" />
+    <Content Include="Views\Topics\Index.cshtml" />
+    <Content Include="Views\Labors\Create.cshtml" />
+    <Content Include="Views\Labors\Delete.cshtml" />
+    <Content Include="Views\Labors\Details.cshtml" />
+    <Content Include="Views\Labors\Edit.cshtml" />
+    <Content Include="Views\Labors\Index.cshtml" />
+    <Content Include="Views\Quests\Create.cshtml" />
+    <Content Include="Views\Quests\Delete.cshtml" />
+    <Content Include="Views\Quests\Details.cshtml" />
+    <Content Include="Views\Quests\Edit.cshtml" />
+    <Content Include="Views\Quests\Index.cshtml" />
+    <Content Include="Views\UserLabors\Create.cshtml" />
+    <Content Include="Views\UserLabors\Delete.cshtml" />
+    <Content Include="Views\UserLabors\Details.cshtml" />
+    <Content Include="Views\UserLabors\Edit.cshtml" />
+    <Content Include="Views\UserLabors\Index.cshtml" />
+    <Content Include="Views\UserQuests\Create.cshtml" />
+    <Content Include="Views\UserQuests\Delete.cshtml" />
+    <Content Include="Views\UserQuests\Details.cshtml" />
+    <Content Include="Views\UserQuests\Edit.cshtml" />
+    <Content Include="Views\UserQuests\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
