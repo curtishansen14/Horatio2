@@ -15,9 +15,16 @@ namespace Horatio_2._0.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Quests
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
-            var quests = db.Quests.Include(q => q.Topic);
+            var quests = from q in db.Quests.Include("Topic")
+                         select q;
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                quests = quests.Where(y => y.Title.Contains(searchString) || y.Topic.Theme.Contains(searchString));
+            }
+            
             return View(quests.ToList());
         }
 
