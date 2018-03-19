@@ -67,11 +67,15 @@ namespace Horatio_2._0.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Quest quest = db.Quests.Find(id);
+            Quest quest = db.Quests.Include(x => x.Labors).FirstOrDefault(q => q.QuestID == id);
             if (quest == null)
             {
                 return HttpNotFound();
             }
+
+            var locations = (from q in db.Labors.Include("Quest")
+                             where q.Location != null && id == q.QuestID
+                             select q).ToList();
             return View(quest);
         }
 
