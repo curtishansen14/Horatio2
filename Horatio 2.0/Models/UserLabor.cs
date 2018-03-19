@@ -24,6 +24,9 @@ namespace Horatio_2._0.Models
         public int UserQuestID { get; set; }
         public UserQuest UserQuest { get; set; }
 
+        [Display(Name = "Target Date")]
+        public DateTime? Target { get; set; }
+
         public bool isComplete { get; set; }
 
     }

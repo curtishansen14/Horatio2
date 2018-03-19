@@ -198,6 +198,10 @@
     <Compile Include="Migrations\201803191624266_hello percent complete to Userquest model.Designer.cs">
       <DependentUpon>201803191624266_hello percent complete to Userquest model.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803191755555_hello Userlabor target date.cs" />
+    <Compile Include="Migrations\201803191755555_hello Userlabor target date.Designer.cs">
+      <DependentUpon>201803191755555_hello Userlabor target date.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -301,6 +305,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201803191624266_hello percent complete to Userquest model.resx">
       <DependentUpon>201803191624266_hello percent complete to Userquest model.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803191755555_hello Userlabor target date.resx">
+      <DependentUpon>201803191755555_hello Userlabor target date.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
