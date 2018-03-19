@@ -97,7 +97,7 @@ namespace Horatio_2._0.Controllers
             {
                 db.Quests.Add(quest);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Create", "Labors", new { id = quest.QuestID });
             }
 
             ViewBag.TopicID = new SelectList(db.Topics, "TopicID", "Theme", quest.TopicID);
