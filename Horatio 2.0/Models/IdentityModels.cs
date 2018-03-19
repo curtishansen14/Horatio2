@@ -37,5 +37,16 @@ namespace Horatio_2._0.Models
         }
 
         public System.Data.Entity.DbSet<Horatio_2._0.Models.RoleViewModel> RoleViewModels { get; set; }
+
+        public System.Data.Entity.DbSet<Horatio_2._0.Models.Topic> Topics { get; set; }
+        public System.Data.Entity.DbSet<Horatio_2._0.Models.Quest> Quests { get; set; }
+
+        public System.Data.Entity.DbSet<Horatio_2._0.Models.Labor> Labors { get; set; }
+
+        public System.Data.Entity.DbSet<Horatio_2._0.Models.UserLabor> UserLabors { get; set; }
+
+        public System.Data.Entity.DbSet<Horatio_2._0.Models.UserQuest> UserQuests { get; set; }
+
+        
     }
 }

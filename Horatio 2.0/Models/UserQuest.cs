@@ -29,6 +29,18 @@ namespace Horatio_2._0.Models
         [Display(Name = "Target Date")]
         public DateTime? Target { get; set; }
 
-        
+        public List<UserLabor> UserLabors { get; set; }
+        public decimal PercentComplete()
+        {
+            decimal completionPercentage;
+            ApplicationDbContext db = new ApplicationDbContext();
+            var completedLabors = db.UserLabors.Where(x => x.isComplete == true && x.UserQuestID == x.UserQuest.UserQuestID).Count();
+            var totalLabors = db.UserLabors.Where(y => y.UserQuestID == y.UserQuest.UserQuestID).Count();
+
+            completionPercentage = 100 * ((decimal)completedLabors/ totalLabors);
+            completionPercentage = Decimal.Round(completionPercentage, 0);
+
+            return completionPercentage;
+        }
     }
 }
