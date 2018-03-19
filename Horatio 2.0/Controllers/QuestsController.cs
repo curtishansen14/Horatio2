@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Horatio_2._0.Models;
+using Microsoft.AspNet.Identity;
 
 namespace Horatio_2._0.Controllers
 {
@@ -26,6 +27,37 @@ namespace Horatio_2._0.Controllers
             }
             
             return View(quests.ToList());
+        }
+
+        public ActionResult AddToProfile([Bind(Include = "QuestID, Title, Description,TopicID,Labors")] int? id)
+        {
+            string userId = User.Identity.GetUserId();
+            UserQuest userquest = new UserQuest();
+            userquest.QuestID = (int)id;
+            userquest.Id = userId;
+            userquest.isActive = true;
+            userquest.isComplete = false;
+            userquest.Target = null;
+
+            db.UserQuests.Add(userquest);
+            db.SaveChanges();
+
+            List<Labor> LaborsToAdd = (from x in db.Labors where x.QuestID == id select x).ToList();
+
+            foreach(Labor labor in LaborsToAdd)
+            {
+                UserLabor userlabor = new UserLabor();
+                userlabor.LaborID = labor.LaborID;
+                userlabor.Id = userId;
+                userlabor.UserQuestID = userquest.UserQuestID;
+                userlabor.isComplete = false;
+                userlabor.Target = null;
+
+                db.UserLabors.Add(userlabor);
+                db.SaveChanges();
+            }
+
+            return RedirectToAction("Index", "UserQuests", new { Id = userId });
         }
 
         // GET: Quests/Details/5
