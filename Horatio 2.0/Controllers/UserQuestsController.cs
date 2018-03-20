@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Horatio_2._0.Models;
+using Microsoft.AspNet.Identity;
 
 namespace Horatio_2._0.Controllers
 {
@@ -89,6 +90,7 @@ namespace Horatio_2._0.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "UserQuestID,QuestID,Id,isActive,isComplete,Target")] UserQuest userQuest)
         {
+            userQuest.Id = User.Identity.GetUserId();
             if (ModelState.IsValid)
             {
                 db.Entry(userQuest).State = EntityState.Modified;
