@@ -28,7 +28,7 @@ namespace Horatio_2._0.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            UserLabor userLabor = db.UserLabors.Find(id);
+            UserLabor userLabor = db.UserLabors.Include(x => x.Labor).Include(z => z.UserQuest).FirstOrDefault();
             if (userLabor == null)
             {
                 return HttpNotFound();
@@ -100,6 +100,15 @@ namespace Horatio_2._0.Controllers
             ViewBag.LaborID = new SelectList(db.Labors, "LaborID", "Title", userLabor.LaborID);
             ViewBag.UserQuestID = new SelectList(db.UserQuests, "UserQuestID", "Id", userLabor.UserQuestID);
             return View(userLabor);
+        }
+
+        public ActionResult Complete(int? id)
+        {
+            UserLabor userlabor = db.UserLabors.Find(id);
+            userlabor.isComplete = true;
+            db.SaveChanges();
+
+            return RedirectToAction("Index");
         }
 
         // GET: UserLabors/Delete/5

@@ -15,9 +15,11 @@ namespace Horatio_2._0.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: UserQuests
-        public ActionResult Index()
+        public ActionResult Index(string Id)
         {
-            var userQuests = db.UserQuests.Include(u => u.AspNetUser).Include(u => u.Quest);
+            var userQuests = from a in db.UserQuests.Include("Quest")
+                             where a.Id == Id
+                             select a;
             return View(userQuests.ToList());
         }
 
