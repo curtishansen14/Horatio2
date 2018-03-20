@@ -1,28 +1,50 @@
 ﻿@model IEnumerable<Horatio_2._0.Models.Quest>
 
 @{
-    Layout = null;
+    ViewBag.Title = "Index";
 }
 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
+<h1>Quests</h1>
 <body>
+
     <p>
-        @Html.ActionLink("Create New", "Create")
+        Quest: An arduous search for something. Create quests for yourself and for the community.
+        Some have been provided by Horatio. Some were written by your peers. Help us grow. Write quests for self improvement.
+        Write quests to discover your area. Write quests to keep a schedule. Write quests to tell a story. Write quests to experience life.
+        Horatio hopes you find meaning on your search.
+    </p>
+    <p>           
+        @using (Html.BeginForm())
+        {
+        <p>
+            
+            <br />
+            <br />
+            <div class="row">
+                <div class="col-md-6">
+                    <input type="submit" value="Filter" /> @Html.TextBox("SearchString")
+                </div>
+                <div class="col-md-6">
+                    <input type="button" style="float:right; background-color:plum; color: white" value="New Quest" onclick="@("window.location.href='" + @Url.Action("Create", "Quests") + "'");" />
+                </div>
+            </div>
+              
+        </p>
+        }
+        </p>
+
+    <p>
+
     </p>
     <table class="table">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Topic.Theme)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Title)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Topic.Theme)
+            </th>  
             <th>
                 @Html.DisplayNameFor(model => model.Descritpion)
             </th>
@@ -32,10 +54,10 @@
     @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Topic.Theme)
+                @Html.DisplayFor(modelItem => item.Title)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Title)
+                @Html.DisplayFor(modelItem => item.Topic.Theme)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Descritpion)
@@ -50,4 +72,4 @@
     
     </table>
 </body>
-</html>
+

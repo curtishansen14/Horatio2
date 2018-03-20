@@ -25,6 +25,12 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Quests", "Index", "Quests")</li>
+                    @if (User.IsInRole("Actor"))
+                    {
+                        <li>@Html.ActionLink("Profile", "Index", "UserQuests", new { Id = User.Identity.GetUserId() }, null)</li>
+                    }
+                   
                     @if (User.IsInRole("Admin"))
                     {
                         <li>@Html.ActionLink("Role", "Index", "Role")</li>
