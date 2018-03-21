@@ -1,0 +1,48 @@
+﻿a:hover{
+    color:white;
+    background-color: transparent;
+}
+
+.navbar-brand{
+    font-size: 5rem;
+    color: white;
+}
+
+.navbar-default .navbar-brand{
+    color: white;
+    font-weight bolder;
+}
+
+a.navbar-brand:hover{
+    
+    color: #428bca;
+}
+
+.navbar-default .navbar-brand{
+    color: #ad102f;
+}
+
+.nav > li > a:hover {
+    background-color: transparent;
+    font-weight: bold;
+}
+
+.navbar-default {
+    background-color: transparent;
+    border: none;
+}
+
+.navbar-default a:hover{
+    color: #428bca;
+    font-weight: bold;
+}
+
+.navbar-default .navbar-nav > li > a:hover{
+    font-weight: bold;
+    color: #ad102f;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: white;
+    font-weight: bolder;
+}

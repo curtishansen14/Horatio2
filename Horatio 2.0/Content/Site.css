@@ -1,6 +1,9 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: ghostwhite;
+  background: url(../Images/ep_naturalblack.png);
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -22,3 +25,52 @@ select,
 textarea {
     max-width: 280px;
 }
+a {
+  color: #428bca;
+  text-decoration: none;
+}
+
+
+.lead {
+    margin-top: 20px;
+  font-stretch:expanded ultra-expanded;
+  font-stretch:wider;
+  font-size: 100px;
+  font-weight: 200;
+  line-height: 1.4;
+  text-align: center;
+    color: ghostwhite;
+
+}
+
+.jumbotron {
+  padding: 30px;
+  margin-bottom: 30px;
+  font-size: 21px;
+  font-weight: 200;
+  line-height: 2.1428571435;
+  color: inherit;
+  background-color: transparent;
+}
+
+.jumbotron h1 {
+  line-height: 1;
+  color: inherit;
+}
+
+.jumbotron p {
+  line-height: 1.4;
+}
+
+.container .jumbotron {
+  border-radius: 6px;
+}
+
+.Hamlet{
+    
+   
+}
+
+.Quote{
+    font-size: 30px;
+    color: ghostwhite;
