@@ -4,7 +4,8 @@
     ViewBag.Title = "Index";
 }
 
-
+<br/>
+<br/>
 <h1>Quests</h1>
 <body>
 
@@ -26,7 +27,7 @@
                     <input type="submit" value="Filter" /> @Html.TextBox("SearchString")
                 </div>
                 <div class="col-md-6">
-                    <input type="button" style="float:right; background-color:plum; color: white" value="New Quest" onclick="@("window.location.href='" + @Url.Action("Create", "Quests") + "'");" />
+                    <input type="button" style="float:right;" value="New Quest" onclick="@("window.location.href='" + @Url.Action("Create", "Quests") + "'");" />
                 </div>
             </div>
               
