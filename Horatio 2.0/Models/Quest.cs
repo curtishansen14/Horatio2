@@ -17,7 +17,7 @@ namespace Horatio_2._0.Models
         public string Title { get; set; }
 
         [Required]
-        public string Descritpion { get; set; }
+        public string Description { get; set; }
 
         [Required]
         [ForeignKey("Topic")]

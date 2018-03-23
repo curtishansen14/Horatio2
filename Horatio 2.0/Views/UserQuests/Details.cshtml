@@ -1,29 +1,12 @@
 ﻿@model Horatio_2._0.Models.UserQuest
 
 @{
-    Layout = null;
+    ViewBag.Title = "Details";
 }
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Details</title>
-</head>
-<body>
     <div>
         <h4>UserQuest</h4>
         <hr />
         <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.AspNetUser.Email)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.AspNetUser.Email)
-            </dd>
-    
             <dt>
                 @Html.DisplayNameFor(model => model.Quest.Title)
             </dt>
@@ -55,12 +38,46 @@
             <dd>
                 @Html.DisplayFor(model => model.Target)
             </dd>
-    
+            <dt>
+                Percent Complete
+            </dt>
+            <dd>
+                @Model.PercentComplete()
+            </dd>
         </dl>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Quest.Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Quest.Description)
+                </th>
+            </tr>
+        </table>
+        <table class="table">
+            @foreach ( var item in Model.UserLabors)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Labor.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Labor.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.isComplete)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Details", "Details", new { id = item.UserLaborID}) |
+                        @Html.ActionLink("Complete", "Complete", "UserLabors", new { id = item.UserLaborID}, null)
+                    </td>
+                </tr>
+            }
+        </table>
     </div>
     <p>
         @Html.ActionLink("Edit", "Edit", new { id = Model.UserQuestID }) |
         @Html.ActionLink("Back to List", "Index")
     </p>
-</body>
-</html>
+
