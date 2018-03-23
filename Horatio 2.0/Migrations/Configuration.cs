@@ -1,5 +1,6 @@
 namespace Horatio_2._0.Migrations
 {
+    using Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -10,22 +11,20 @@ namespace Horatio_2._0.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            ContextKey = "Horatio_2._0.Models.ApplicationDbContext";
         }
 
         protected override void Seed(Horatio_2._0.Models.ApplicationDbContext context)
         {
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+            context.Topics.AddOrUpdate(y => y.Theme,
+            new Topic() { TopicID = 1, Theme = "Sport" },
+            new Topic() { TopicID = 2, Theme = "Art" },
+            new Topic() { TopicID = 3, Theme = "Community" },
+            new Topic() { TopicID = 4, Theme = "Career" },
+            new Topic() { TopicID = 5, Theme = "Nature" },
+            new Topic() { TopicID = 6, Theme = "Group" },
+            new Topic() { TopicID = 7, Theme = "Sponsored" },
+            new Topic() { TopicID = 8, Theme = "Miscellaneous" });
         }
     }
 }
