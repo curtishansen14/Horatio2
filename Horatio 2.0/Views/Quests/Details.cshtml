@@ -58,3 +58,60 @@
         @Html.ActionLink("Edit", "Edit", new { id = Model.QuestID }) |
         @Html.ActionLink("Back to List", "Index")
     </p>
+
+<head>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h3>"Now no way can I stray;"</h3>
+    <div id="map"></div>
+    <script>
+        var latlng = {lat: 43.0731, lng: -89.4012};
+        function getLatLng(address){
+            var cleanAddress = address.split(' ').join('+');
+            var settings = {
+                "async": false,
+                "crossDomain": true,
+                "url": "http://maps.googleapis.com/maps/api/geocode/json?address="+cleanAddress+"&senor=false",
+                "method": "GET",
+            }
+
+            $.ajax(settings).done(function (response) {
+                latlng =  response["results"][0]['geometry']['location'];
+            });
+        }
+        function initMap() {
+
+            var quest = @Html.Raw(Json.Encode(Model)); 
+        var LaborLatLng = {lat: 43.0731, lng: -89.4012}; 
+        var map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 14,
+          center: LaborLatLng
+        });
+        for (i = 0; i < quest.Labors.length; i++) 
+        {
+            if (quest.Labors[i]['Location'] != null) 
+            {
+                getLatLng(quest.Labors[i]['Location'])
+
+                var marker = new google.maps.Marker({
+                    position: latlng,
+                    map: map
+                });
+
+            }
+        }
+
+
+      }
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYRtMdjjBLttrxgkgrS48RWxSNCLwgGGs&callback=initMap">
+    </script>
+
+</body>
