@@ -1,17 +1,10 @@
 ﻿@model Horatio_2._0.Models.Quest
 
 @{
-    Layout = null;
+    ViewBag.Title = "Create";
 }
 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Create</title>
-</head>
-<body>
     @using (Html.BeginForm()) 
     {
         @Html.AntiForgeryToken()
@@ -55,5 +48,4 @@
     <div>
         @Html.ActionLink("Back to List", "Index")
     </div>
-</body>
-</html>
+
