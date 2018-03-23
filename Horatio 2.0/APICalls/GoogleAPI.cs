@@ -15,7 +15,7 @@ namespace Horatio_2._0.APICalls
         public List<Labor> GetLaborLocations(int id)
         {
             var locations = (from q in db.Labors.Include("Quest")
-                             where q.Location != null && id == q.Quest_ID
+                             where q.Location != null && id == q.QuestID
                              select q).ToList();
 
             return locations;
