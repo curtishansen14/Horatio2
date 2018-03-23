@@ -1,25 +1,16 @@
 ﻿@model IEnumerable<Horatio_2._0.Models.UserQuest>
 
 @{
-    Layout = null;
+    ViewBag.Title = "Index";
 }
+<br />
+<br />
+<br />
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
+<h2>Profile</h2>
     <table class="table">
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.AspNetUser.Email)
-            </th>
+ 
             <th>
                 @Html.DisplayNameFor(model => model.Quest.Title)
             </th>
@@ -37,9 +28,7 @@
     
     @foreach (var item in Model) {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.AspNetUser.Email)
-            </td>
+
             <td>
                 @Html.DisplayFor(modelItem => item.Quest.Title)
             </td>
@@ -55,11 +44,10 @@
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id=item.UserQuestID }) |
                 @Html.ActionLink("Details", "Details", new { id=item.UserQuestID }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.UserQuestID })
+   
             </td>
         </tr>
     }
     
     </table>
-</body>
-</html>
+
