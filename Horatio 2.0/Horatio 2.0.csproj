@@ -180,9 +180,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201803261546307_Hello Initial.cs" />
-    <Compile Include="Migrations\201803261546307_Hello Initial.Designer.cs">
-      <DependentUpon>201803261546307_Hello Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201803261655422_Hello init.cs" />
+    <Compile Include="Migrations\201803261655422_Hello init.Designer.cs">
+      <DependentUpon>201803261655422_Hello init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201803261705358_Hello seeded data.cs" />
+    <Compile Include="Migrations\201803261705358_Hello seeded data.Designer.cs">
+      <DependentUpon>201803261705358_Hello seeded data.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -298,8 +302,11 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201803261546307_Hello Initial.resx">
-      <DependentUpon>201803261546307_Hello Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201803261655422_Hello init.resx">
+      <DependentUpon>201803261655422_Hello init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803261705358_Hello seeded data.resx">
+      <DependentUpon>201803261705358_Hello seeded data.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

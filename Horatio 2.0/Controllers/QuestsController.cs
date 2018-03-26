@@ -91,7 +91,7 @@ namespace Horatio_2._0.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "QuestID,Title,Descritpion,TopicID")] Quest quest)
+        public ActionResult Create([Bind(Include = "QuestID,Title,Description,TopicID,Labors")] Quest quest)
         {
             if (ModelState.IsValid)
             {
