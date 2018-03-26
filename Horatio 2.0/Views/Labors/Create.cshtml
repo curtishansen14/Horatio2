@@ -11,53 +11,73 @@
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>Labor</h4>
+        <h4>Labor:</h4>
+        <p>
+           A labor is a task big or small that requires the physical or mental efforts of an individual. The labor is meant to be small task or 
+            bench mark on the way to the completion of a quest. Heracles compeleted 12 labors ranging from 
+            slaying the Nemean lion to cleaning the Augean stables in a single day. His were famous and great. Yours may be whatever you like.
+            Will you imagine labors of love? Will you imagine labors of great effort. Or will your labors be a pleasure to complete? The choice is 
+            yours.  
+                  
+        </p>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+        <div class="row">
+            <div class="form-group">
+                @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
-            </div>
-        </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Location, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Location, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Location, "", new { @class = "text-danger" })
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Location, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Location, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Location, "", new { @class = "text-danger" })
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+            <div class="form-group ">
+                @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.TextAreaFor(model => model.Description, new { htmlAttributes = new { @class = "descriptionbox" } })
+                    @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                    @*@Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "descriptionbox" } })*@
+                </div>
             </div>
-        </div>
-        <div>
-            @{
-                string message = TempData["Message"] as string;
-                if (message != null)
-                {
-                    <div class="alert-message">@message</div>
+
+            
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" />
+                </div>
+            </div>
+            <div>
+                @{
+                    string message = TempData["Message"] as string;
+                    if (message != null)
+                    {
+                        <div class="alert-message">@message</div>
+                    }
                 }
-            }
+            </div>
         </div>
+      
     </div>
                 }
 
-<div>
-    @Html.ActionLink("Finished", "Index", "Quests")
+<div class="col-md-12">
+    <input type="button" style="float:right;" value="Finished" onclick="@("window.location.href='" + @Url.Action("Index", "Quests") + "'");" />
 </div>
+<br/>
+
+
+@*<div>
+    @Html.ActionLink("Finished", "Index", "Quests")
+</div>*@
 
