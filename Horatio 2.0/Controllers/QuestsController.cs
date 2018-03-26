@@ -25,8 +25,8 @@ namespace Horatio_2._0.Controllers
             {
                 quests = quests.Where(y => y.Title.Contains(searchString) || y.Topic.Theme.Contains(searchString));
             }
-            
-            return View(quests.ToList());
+
+            return View(quests);
         }
 
         public ActionResult AddToProfile([Bind(Include = "QuestID, Title, Description,TopicID,Labors")] int? id)

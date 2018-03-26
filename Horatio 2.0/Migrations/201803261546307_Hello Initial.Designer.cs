@@ -7,13 +7,13 @@ namespace Horatio_2._0.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class hellopercentcompletetoUserquestmodel : IMigrationMetadata
+    public sealed partial class HelloInitial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(hellopercentcompletetoUserquestmodel));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(HelloInitial));
         
         string IMigrationMetadata.Id
         {
-            get { return "201803191624266_hello percent complete to Userquest model"; }
+            get { return "201803261546307_Hello Initial"; }
         }
         
         string IMigrationMetadata.Source

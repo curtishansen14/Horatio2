@@ -11,7 +11,6 @@ namespace Horatio_2._0.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "Horatio_2._0.Models.ApplicationDbContext";
         }
 
         protected override void Seed(Horatio_2._0.Models.ApplicationDbContext context)
