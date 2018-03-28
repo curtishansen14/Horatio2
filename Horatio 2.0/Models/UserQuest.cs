@@ -27,6 +27,7 @@ namespace Horatio_2._0.Models
         public bool isComplete { get; set; }
 
         [Display(Name = "Target Date")]
+        [DataType(DataType.Date)]
         public DateTime? Target { get; set; }
 
         public List<UserLabor> UserLabors { get; set; }
