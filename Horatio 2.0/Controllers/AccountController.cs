@@ -157,7 +157,7 @@ namespace Horatio_2._0.Controllers
             List<SelectListItem> list = new List<SelectListItem>();
             foreach (var role in RoleManager.Roles)
                 list.Add(new SelectListItem() { Value = role.Name, Text = role.Name });
-            list.RemoveAt(1);
+           
             ViewBag.Roles = list;
             return View();
         }

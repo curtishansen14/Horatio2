@@ -12,15 +12,32 @@
     @Html.AntiForgeryToken()
     <br/>
     <br/>
-    <h4>Create a new account.</h4>
+    <h3>Create a new account.</h3>
+
+        <p>
+            "All the world's a stage,
+            <br />
+            And all the men and women merely players;
+            <br />
+            They have their exists and their entrances,
+            <br />
+            And one man in his time plays many parts,"
+            <br />
+
+            - William Shakespeare As You Like It, Act II Scene VII
+        </p>   
+    <h4>
+        Actor: The one who acts. The one who performs. The one who does. 
+    </h4>
+
     <hr />
     @Html.ValidationSummary("", new { @class = "text-danger" })
-    @*<div class="form-group">
+    <div class="form-group">
         @Html.LabelFor(m => m.RoleName, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
+        <div class="col-md-10" style="width: 310px">
             @Html.DropDownListFor(m => m.RoleName, new SelectList(ViewBag.Roles, "Value", "Text"), new { @class = "form-control"})
         </div>
-    </div>*@
+    </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
