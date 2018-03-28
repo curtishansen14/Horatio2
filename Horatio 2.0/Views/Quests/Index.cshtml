@@ -64,9 +64,12 @@
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.QuestID }) |
-                @Html.ActionLink("Details", "Details", new { id=item.QuestID }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.QuestID })
+                @Html.ActionLink("Details", "Details", new { id=item.QuestID }) 
+                @if (User.IsInRole("Admin"))
+                {
+                    @Html.ActionLink("Delete", "Delete", new { id = item.QuestID })
+                }
+                
             </td>
         </tr>
     }

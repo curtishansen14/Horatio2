@@ -54,8 +54,10 @@
         
 
 </div>
+<div class="col-md-12">
+    <input type="button" style="float:right; background-color:green; color: white;" value="Challenge Accepted" onclick="@("window.location.href='" + @Url.Action("AddToProfile", "Quests", new { id = Model.QuestID }) + "'");" />
+</div>
     <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.QuestID }) |
         @Html.ActionLink("Back to List", "Index")
     </p>
 
