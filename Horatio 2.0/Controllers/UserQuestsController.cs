@@ -95,7 +95,7 @@ namespace Horatio_2._0.Controllers
             {
                 db.Entry(userQuest).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "UserQuests", new { Id = userQuest.Id });
             }
             ViewBag.Id = new SelectList(db.Users, "Id", "Email", userQuest.Id);
             ViewBag.QuestID = new SelectList(db.Quests, "QuestID", "Title", userQuest.QuestID);
