@@ -81,11 +81,11 @@ textarea {
   border-radius: 6px;
 }
 
-.Hamlet{
-    
-   
+.form-control{
+    width: 280px;
 }
 
-.Quote{
+.Quote {
     font-size: 30px;
     color: ghostwhite;
+}
